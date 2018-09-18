@@ -23,6 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return view('home.index', [
+            'title' => 'Incube8'
+        ]);
+    }
+
+    public function basic()
+    {
         return view('home');
     }
 }

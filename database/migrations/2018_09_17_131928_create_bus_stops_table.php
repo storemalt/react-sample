@@ -15,6 +15,7 @@ class CreateBusStopsTable extends Migration
     {
         Schema::create('bus_stops', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('name');
             $table->string('address');
             $table->decimal('latitude','10','8');

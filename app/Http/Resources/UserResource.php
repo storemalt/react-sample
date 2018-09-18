@@ -14,7 +14,6 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
-
         return [
             'type' => 'users',
             'id' => (string)$this->id,
@@ -22,6 +21,7 @@ class UserResource extends JsonResource
                 'username' => $this->username,
                 'name' => $this->name,
                 'email' => $this->email,
+                'created_at' => $this->created_at->format('Y-m-d H:i:s'),
             ],
             'relationships' => '',
             'links'         => [

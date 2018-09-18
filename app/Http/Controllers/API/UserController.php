@@ -9,11 +9,6 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,16 +17,13 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate(15);
-
-        UserResource::withoutWrapping();
-
         return UserResource::collection($users);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -56,7 +48,6 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        UserResource::withoutWrapping();
         return new UserResource($user);
     }
 
@@ -64,6 +55,7 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param User App\User $user
+     *
      * @return App\Http\Resources\UserResource
      */
     public function destroy(User $user)
