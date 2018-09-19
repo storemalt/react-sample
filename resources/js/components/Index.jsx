@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import axios from 'axios';
+import Users from './Users.jsx';
 import Dashboard from './Dashboard.jsx';
-import Example from './Example';
 
 class Index extends Component {
   constructor(props) {
@@ -11,18 +10,40 @@ class Index extends Component {
     this.props = props;
   }
 
+  // @ADRIAN create store function to database
   render() {
     return (
-      <div className="container">
-        <Router>
-          <div>
-            <Link to="/">Home</Link>
-            <Link to="/dashboard">Dashboard</Link>
-            <Route path="/" exact component={Example} />
-            <Route path="/dashboard" exact component={Dashboard} />
+      <Router>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <div
+                className="btn-group mb-4" role="group"
+                aria-label="Basic example"
+              >
+                {/* Links */}
+                <Link
+                  to="/dashboard"
+                  className="btn btn-success">Dashboard
+                </Link>
+                <Link
+                  to="/busstops" className="btn btn-success">Bus
+                  Stops</Link>
+                <Link
+                  to="/busstops/create"
+                  className="btn btn-success">Add</Link>
+                <Link
+                  to="/users"
+                  className="btn btn-success">Users</Link>
+              </div>
+
+              {/* Routes */}
+              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/users" component={Users} />
+            </div>
           </div>
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
 }

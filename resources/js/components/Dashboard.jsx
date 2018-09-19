@@ -1,61 +1,42 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
+import Map from './Map';
 
 class Dashboard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      users: [],
-    };
-  }
-
-  componentDidMount() {
-    axios.get('/api/users').then((response) => {
-      if (response.data.data.length > 0) {
-        this.setState({
-          users: response.data.data,
-        });
-      }
-    });
+  constructor(props) {
+    super(props);
+    this.props = props;
   }
 
   render() {
-    const users = this.state.users.map((item, key) => (
-      <tr key={item.id}>
-        <th scope="row">
-          {' '}
-          {key + 1}
-          {' '}
-        </th>
-        <td>{item.attributes.name}</td>
-        <td>{item.attributes.username}</td>
-        <td>{item.attributes.created_at}</td>
-      </tr>
-    ));
-
     return (
-      <div className="container">
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Username</th>
-              <th scope="col">Registered</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users}
-          </tbody>
-        </table>
+      <div className="row">
+        <div className="col-12">
+
+          <div className="card mb-4 box-shadow">
+            <div className="card-header">
+              <h4 className="my-0 font-weight-normal">Dashboard</h4>
+            </div>
+            <div className="card-body">
+              <Map isMarkerShown />
+            </div>
+          </div>
+
+          <div className="card mb-4 box-shadow">
+            <div className="card-header">
+              <h4 className="my-0 font-weight-normal">Nearest Bus Stop</h4>
+            </div>
+            <div className="card-body">
+              <ul
+                className="list-group list-group-flush"
+                id="nearest-container"
+              />
+            </div>
+            {/* $busStops->links('pagination::bootstrap-4') */}
+          </div>
+        </div>
       </div>
     );
   }
-}
-
-if (document.getElementById('content')) {
-  ReactDOM.render(<Dashboard />, document.getElementById('content'));
 }
 
 export default Dashboard;
