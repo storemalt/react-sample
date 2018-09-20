@@ -79140,23 +79140,6 @@ var BusStops = function (_Component) {
                   item.attributes.longitude
                 )
               )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'col-2' },
-              '@ADRIAN edit link here',
-              ' ',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-edit' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'button',
-                {
-                  type: 'button',
-                  rel: 'no-refresh',
-                  className: 'btn-link',
-                  'data-id': '{item.id}'
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-trash' })
-              )
             )
           )
         );

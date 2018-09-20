@@ -41,6 +41,7 @@ class BusStops extends Component {
             </button>
           </div>
 
+          {/* }
           <div className="col-2">
             @ADRIAN edit link here
             {' '}
@@ -54,6 +55,7 @@ class BusStops extends Component {
               <i className="fas fa-trash" />
             </button>
           </div>
+          */}
         </div>
       </li>
     ));
