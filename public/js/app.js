@@ -42380,6 +42380,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Users_jsx__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Dashboard_jsx__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__BusStops_jsx__ = __webpack_require__(430);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__AddBusStop_jsx__ = __webpack_require__(431);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -42387,6 +42389,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -42427,39 +42431,47 @@ var Index = function (_Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 {
-                  className: 'btn-group mb-4', role: 'group',
+                  className: 'btn-group mb-4',
+                  role: 'group',
                   'aria-label': 'Basic example'
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                   {
-                    to: '/dashboard',
-                    className: 'btn btn-success' },
+                    to: '/',
+                    className: 'btn btn-success'
+                  },
                   'Dashboard'
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                   {
-                    to: '/busstops', className: 'btn btn-success' },
+                    to: '/bus-stops',
+                    className: 'btn btn-success'
+                  },
                   'Bus Stops'
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                   {
-                    to: '/busstops/create',
-                    className: 'btn btn-success' },
+                    to: '/bus-stop/create',
+                    className: 'btn btn-success'
+                  },
                   'Add'
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                   {
                     to: '/users',
-                    className: 'btn btn-success' },
+                    className: 'btn btn-success'
+                  },
                   'Users'
                 )
               ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/dashboard', component: __WEBPACK_IMPORTED_MODULE_4__Dashboard_jsx__["a" /* default */] }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/users', component: __WEBPACK_IMPORTED_MODULE_3__Users_jsx__["a" /* default */] })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/', exact: true, component: __WEBPACK_IMPORTED_MODULE_4__Dashboard_jsx__["a" /* default */] }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/users', exact: true, component: __WEBPACK_IMPORTED_MODULE_3__Users_jsx__["a" /* default */] }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/bus-stops', exact: true, component: __WEBPACK_IMPORTED_MODULE_5__BusStops_jsx__["a" /* default */] }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/bus-stop/create', exact: true, component: __WEBPACK_IMPORTED_MODULE_6__AddBusStop_jsx__["a" /* default */] })
             )
           )
         )
@@ -65884,10 +65896,8 @@ module.exports = hoistNonReactStatics;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65895,7 +65905,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -65909,7 +65918,7 @@ var Users = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Users.__proto__ || Object.getPrototypeOf(Users)).call(this, props));
 
     _this.state = {
-      users: []
+      usersData: []
     };
     return _this;
   }
@@ -65919,10 +65928,10 @@ var Users = function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/users').then(function (response) {
+      __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/users').then(function (response) {
         if (response.data.data.length > 0) {
           _this2.setState({
-            users: response.data.data
+            usersData: response.data.data
           });
         }
       });
@@ -65930,7 +65939,9 @@ var Users = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var users = this.state.users.map(function (item, key) {
+      var usersData = this.state.usersData;
+
+      var users = usersData.map(function (item, key) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'tr',
           { key: item.id },
@@ -65963,40 +65974,65 @@ var Users = function (_Component) {
         'div',
         { className: 'container' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'table',
-          { className: 'table' },
+          'div',
+          { className: 'row' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'thead',
-            null,
+            'div',
+            { className: 'col' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'tr',
-              null,
+              'div',
+              { className: 'card mb-4 box-shadow' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'th',
-                { scope: 'col' },
-                '#'
+                'div',
+                { className: 'card-header' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'h4',
+                  { className: 'my-0 font-weight-normal' },
+                  'Users'
+                )
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'th',
-                { scope: 'col' },
-                'Name'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'th',
-                { scope: 'col' },
-                'Username'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'th',
-                { scope: 'col' },
-                'Registered'
+                'div',
+                { className: 'card-body' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'table',
+                  { className: 'table' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'thead',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'tr',
+                      null,
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'th',
+                        { scope: 'col' },
+                        '#'
+                      ),
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'th',
+                        { scope: 'col' },
+                        'Name'
+                      ),
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'th',
+                        { scope: 'col' },
+                        'Username'
+                      ),
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'th',
+                        { scope: 'col' },
+                        'Registered'
+                      )
+                    )
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'tbody',
+                    null,
+                    users
+                  )
+                )
               )
             )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'tbody',
-            null,
-            users
           )
         )
       );
@@ -79002,6 +79038,421 @@ var updaterMap = {}
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Map__ = __webpack_require__(220);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var BusStops = function (_Component) {
+  _inherits(BusStops, _Component);
+
+  function BusStops(props) {
+    _classCallCheck(this, BusStops);
+
+    var _this = _possibleConstructorReturn(this, (BusStops.__proto__ || Object.getPrototypeOf(BusStops)).call(this, props));
+
+    _this.state = {
+      busStopsData: []
+    };
+    return _this;
+  }
+
+  _createClass(BusStops, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/bus-stops').then(function (response) {
+        if (response.data.data.length > 0) {
+          _this2.setState({
+            busStopsData: response.data.data
+          });
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var busStopsData = this.state.busStopsData;
+
+      var busStops = busStopsData.map(function (item) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'li',
+          { className: 'list-group-item', key: item.id },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'row' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'col-10' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'h6',
+                null,
+                item.attributes.name
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'button',
+                { type: 'button', className: 'btn btn-info btn-sm' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'small',
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    { className: 'badge badge-light' },
+                    'Lat'
+                  ),
+                  item.attributes.latitude
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'button',
+                { type: 'button', className: 'btn btn-info btn-sm' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'small',
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    { className: 'badge badge-light' },
+                    'Long'
+                  ),
+                  item.attributes.longitude
+                )
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'col-2' },
+              '@ADRIAN edit link here',
+              ' ',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-edit' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'button',
+                {
+                  type: 'button',
+                  rel: 'no-refresh',
+                  className: 'btn-link',
+                  'data-id': '{item.id}'
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-trash' })
+              )
+            )
+          )
+        );
+      });
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'container' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'row' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'col' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'card mb-4 box-shadow' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'card-header' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'h4',
+                  { className: 'my-0 font-weight-normal' },
+                  'Bus Stop Map'
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'card-body' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Map__["a" /* default */], { isMarkerShown: true })
+              )
+            )
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'row' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'col' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'card mb-4 box-shadow' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'card-header' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'h4',
+                  { className: 'my-0 font-weight-normal' },
+                  'Available Bus Stops'
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'card-body' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'ul',
+                  { className: 'list-group' },
+                  busStops
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return BusStops;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (BusStops);
+
+/***/ }),
+/* 431 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var AddBusStop = function (_Component) {
+  _inherits(AddBusStop, _Component);
+
+  function AddBusStop(props) {
+    _classCallCheck(this, AddBusStop);
+
+    var _this = _possibleConstructorReturn(this, (AddBusStop.__proto__ || Object.getPrototypeOf(AddBusStop)).call(this, props));
+
+    _this.state = {
+      name: '',
+      address: '',
+      latitude: '',
+      longitude: '',
+      bus_schedule: ''
+    };
+    return _this;
+  }
+
+  _createClass(AddBusStop, [{
+    key: 'handleNameChange',
+    value: function handleNameChange(e) {
+      this.setState({
+        name: e.target.value
+      });
+    }
+  }, {
+    key: 'handleAddressChange',
+    value: function handleAddressChange(e) {
+      this.setState({
+        address: e.target.value
+      });
+    }
+  }, {
+    key: 'handleLatitudeChange',
+    value: function handleLatitudeChange(e) {
+      this.setState({
+        latitude: e.target.value
+      });
+    }
+  }, {
+    key: 'handleLongitudeChange',
+    value: function handleLongitudeChange(e) {
+      this.setState({
+        longitude: e.target.value
+      });
+    }
+  }, {
+    key: 'handleScheduleChange',
+    value: function handleScheduleChange(e) {
+      this.setState({
+        bus_schedule: e.target.value
+      });
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/bus-stops', this.state).then(function (response) {}).then(function (error) {
+        console.log(error);
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'container' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'card mb-4 box-shadow' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'card-header' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'h4',
+              { className: 'my-0 font-weight-normal' },
+              'Add a Bus Stop'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'card-body' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'form',
+              { onSubmit: this.handleSubmit.bind(this) },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'form-group' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'label',
+                  { htmlFor: 'name' },
+                  'Name'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                  type: 'text',
+                  name: 'name',
+                  className: 'form-control',
+                  id: 'name',
+                  'aria-describedby': 'name',
+                  placeholder: 'Enter Name',
+                  onChange: this.handleNameChange.bind(this),
+                  value: this.state.name
+                })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'form-group' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'label',
+                  { htmlFor: 'address' },
+                  'Address'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                  type: 'text',
+                  name: 'address',
+                  className: 'form-control',
+                  id: 'address',
+                  'aria-describedby': 'address',
+                  placeholder: 'Enter Address',
+                  onChange: this.handleAddressChange.bind(this),
+                  value: this.state.address
+                })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'form-group' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'label',
+                  { htmlFor: 'bus_schedule' },
+                  'Schedule'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                  type: 'text',
+                  name: 'bus_schedule',
+                  className: 'form-control',
+                  id: 'bus_schedule',
+                  'aria-describedby': 'bus_schedule',
+                  placeholder: 'Enter Schedule',
+                  onChange: this.handleScheduleChange.bind(this),
+                  value: this.state.schedule
+                })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'form-group' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'label',
+                  { htmlFor: 'latitude' },
+                  'Latitude'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                  type: 'text',
+                  name: 'latitude',
+                  className: 'form-control',
+                  id: 'latitude',
+                  'aria-describedby': 'latitude',
+                  placeholder: 'Enter Latitude',
+                  onChange: this.handleLatitudeChange.bind(this),
+                  value: this.state.latitude
+                })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'form-group' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'label',
+                  { htmlFor: 'longitude' },
+                  'Longitude'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                  type: 'text',
+                  name: 'longitude',
+                  className: 'form-control',
+                  id: 'longitude',
+                  'aria-describedby': 'longitude',
+                  placeholder: 'Enter Longitude',
+                  onChange: this.handleLongitudeChange.bind(this),
+                  value: this.state.longitude
+                })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'form-group' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'button',
+                  { type: 'submit', className: 'btn btn-primary' },
+                  'Submit'
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return AddBusStop;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (AddBusStop);
 
 /***/ })
 /******/ ]);

@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('users', 'API\UserController');
+Route::apiResource('bus-stops', 'API\BusStopController');

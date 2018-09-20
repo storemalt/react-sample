@@ -16,6 +16,7 @@
     <!-- Styles -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/lumen/bootstrap.min.css" rel="stylesheet"
           type="text/css">
+    @yield('css')
 
 </head>
 <body>
